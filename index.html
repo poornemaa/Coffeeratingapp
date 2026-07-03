@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Coffee Rating Application</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>☕ Coffee Rating Application</h1>
+
+<div class="cards">
+
+{% for coffee in coffees %}
+
+<div class="card">
+
+<img src="{{ coffee[2] }}">
+
+<h2>{{ coffee[1] }}</h2>
+
+<p>⭐ Votes : {{ coffee[3] }}</p>
+
+<a href="/vote/{{ coffee[0] }}">
+
+<button>
+
+👍 Vote
+
+</button>
+
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>
